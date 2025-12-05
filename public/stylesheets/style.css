@@ -1,8 +1,41 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #10291D;
+}
+
+body * {
+  color: #F7F7F7;
 }
 
 a {
-  color: #00B7FF;
+  color:black;
+}
+
+.navbar {
+  max-width: 1200px;
+  background-color: #F7F7F7;
+  height: 70px;
+  margin: 100px auto;
+  display: flex;
+  justify-content: space-around;
+  border: solid #F7C64A 1px;
+  flex-direction: row;
+}
+
+.navbar a {
+  align-content: center;
+  display: block;
+  border: solid #F7C64A 1px;
+  font-family: 'Montserrat Regular'; 
+  font-size: 20px;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  color: #7e7f9a;
 }
