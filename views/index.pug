@@ -1,12 +1,16 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
-  div(class='navbar')
-    a(href="https://127.0.0.1") Menu
-    a(href="https://127.0.0.1") About Us
-    a(href="https://127.0.0.1") Reviews
+  div(class='nav-container')
+    div(class='navbar')
+        a(href="https://127.0.0.1:3000")
+            img(src='../images/downtown-donuts-white-logo.png')
+        a(href="https://127.0.0.1") Menu
+        a(href="https://127.0.0.1") About Us
+        a(href="https://127.0.0.1") Reviews
+  div(class='landing')
+    h1= title
+    p Welcome to #{title}
 
     
 //-   ol

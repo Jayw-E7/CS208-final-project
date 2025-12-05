@@ -1,41 +1,63 @@
 body {
-  padding: 50px;
+  /* padding: 50px; */
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background-color: #10291D;
+  margin: 0px;
+  padding: 0px;
 }
 
 body * {
   color: #F7F7F7;
 }
 
-a {
-  color:black;
+/* Navigation Bar Style */
+
+.nav-container {
+  display: flex;
+  background-color: #F7F7F7;
+  height: 95px;
+  justify-content: left;
+  border-bottom: solid #F7C64A 10px;
 }
 
 .navbar {
-  max-width: 1200px;
+  /* max-width: 1200px; */
   background-color: #F7F7F7;
-  height: 70px;
-  margin: 100px auto;
-  display: flex;
-  justify-content: space-around;
-  border: solid #F7C64A 1px;
+  /* margin: 100px auto; */
+  display:flex;
+  /* justify-content: left; */
+  /* border: solid #F7C64A 3px; */
   flex-direction: row;
+  gap: 30px;
+  margin-left: 30px;
 }
 
-.navbar a {
-  align-content: center;
-  display: block;
-  border: solid #F7C64A 1px;
+.navbar img {
+  margin: 10px 20px 10px 40px;
+  max-height: 80px;
+  max-width: 80px;
+}
+
+.navbar > a {
+  /* align-content: center; */
+  align-self: center;
+  display: inline;
+  color: black;
+  /* border: solid #F7C64A 1px; */
   font-family: 'Montserrat Regular'; 
   font-size: 20px;
-  margin: auto;
-  width: 100%;
-  height: 100%;
-  text-align: center;
+  /* margin: 5px 30px 5px 30px; */
+  /* text-align: center; */
   text-decoration: none;
 }
 
 .navbar a:hover {
   color: #7e7f9a;
+}
+
+
+/* Style for each page */
+
+.landing {
+  padding: 40px;
 }
