@@ -1,33 +1,31 @@
 extends layout
 
+//- -var url = "http://127.0.0.1:3000"
+
 block content
-  div(class='nav-container')
-    div(class='navbar')
-        a(href="https://127.0.0.1:3000")
-            img(src='../images/downtown-donuts-white-logo.png')
-        a(href="https://127.0.0.1") Menu
-        a(href="https://127.0.0.1") About Us
-        a(href="https://127.0.0.1") Reviews
+  include includes/nav.pug
   div(class='landing')
-    h1= title
-    p Welcome to #{title}
 
-    
-//-   ol
-//-   each val in todos
-    //- li
-    //-   span= val.task + ' - '
-    //-   if val.completed > 0
-    //-     span Completed
-    //-   else
-    //-     pan Not Completed
-    //-   form(method='POST' action='/delete')
-    //-     input(type='hidden', name='id', value=val.id)
-    //-     button(type='submit') Delete
 
-//-   hr
-//-   h2 Add a new task
-//-   form(method='POST' action='/create')
-//-     label(for='task') Task:
-//-     input(type='text', name='task', id='task', required)
-//-     button(type='submit') Create Task
+
+
+  
+    //- p test
+    //- ol
+    //- each val in todos
+    //-   li
+    //-     span= val.task + ' - '
+    //-     if val.completed > 0
+    //-       span Completed
+    //-     else
+    //-       pan Not Completed
+    //-     form(method='POST' action='/delete')
+    //-       input(type='hidden', name='id', value=val.id)
+    //-       button(type='submit') Delete
+
+    //- hr
+    //- h2 Add a new task
+    //- form(method='POST' action='/create')
+    //-   label(for='task') Task:
+    //-   input(type='text', name='task', id='task', required)
+    //-   button(type='submit') Create Task

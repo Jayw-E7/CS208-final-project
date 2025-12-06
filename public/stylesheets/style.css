@@ -1,6 +1,6 @@
 body {
   /* padding: 50px; */
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px "Montserrat Regular";
   background-color: #10291D;
   margin: 0px;
   padding: 0px;
@@ -8,6 +8,10 @@ body {
 
 body * {
   color: #F7F7F7;
+}
+
+p {
+  font: 18px "Montserrat Regular";
 }
 
 /* Navigation Bar Style */
@@ -18,6 +22,7 @@ body * {
   height: 95px;
   justify-content: left;
   border-bottom: solid #F7C64A 10px;
+  float: top;
 }
 
 .navbar {
@@ -60,4 +65,31 @@ body * {
 
 .landing {
   padding: 40px;
+}
+
+.menu {
+
+}
+
+.about {
+  padding: 0px;
+  margin: 0px;
+  float: none;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  background-color: #F7F7F7;
+}
+
+.about .text {
+  background-color: #10291D;
+  max-width: 600px;
+}
+
+.about .text p {
+  color: #F7F7F7;
+}
+
+.reviews {
+
 }
