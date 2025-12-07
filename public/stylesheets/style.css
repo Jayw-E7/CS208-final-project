@@ -1,13 +1,25 @@
+
+/* Add variables */
+:root {
+  --bg-color: #F7F7F7;
+  --text-color: black;
+  --nav-color: #10291D;
+  --nav-text-color: #F7F7F7;
+}
+
+
 body {
   /* padding: 50px; */
   font: 14px "Montserrat Regular";
-  background-color: #10291D;
+  background: var(--bg-color);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   margin: 0px;
   padding: 0px;
 }
 
-body * {
-  color: #F7F7F7;
+body * :not(button):not(input) {
+  color: var(--text-color);
 }
 
 p {
@@ -18,16 +30,17 @@ p {
 
 .nav-container {
   display: flex;
-  background-color: #F7F7F7;
+  background-color: var(--nav-color);
   height: 95px;
   justify-content: left;
   border-bottom: solid #F7C64A 10px;
-  float: top;
+  /*float: top;*/
+  margin: 0px;
 }
 
 .navbar {
   /* max-width: 1200px; */
-  background-color: #F7F7F7;
+  background-color: var(--nav-color);
   /* margin: 100px auto; */
   display:flex;
   /* justify-content: left; */
@@ -47,7 +60,7 @@ p {
   /* align-content: center; */
   align-self: center;
   display: inline;
-  color: black;
+  color: var(--nav-text-color);
   /* border: solid #F7C64A 1px; */
   font-family: 'Montserrat Regular'; 
   font-size: 20px;
@@ -72,24 +85,52 @@ p {
 }
 
 .about {
-  padding: 0px;
+  padding: 10px;
   margin: 0px;
-  float: none;
-  overflow: hidden;
-  height: 100%;
-  width: 100%;
+  min-height: calc(100vh - 125px);
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 300px;
   background-color: #F7F7F7;
+  border-right: double #F7C64A 3px;
+  border-left: double #F7C64A 3px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.about .text {
+.about h1 {
+  color: var(--text-color);
+  display: inline;
+  font-size: 60px;
+}
+
+.about .logo {
+  height: 400px;
+  width: 500px;
   background-color: #10291D;
-  max-width: 600px;
+  align-items:center;
+  padding: 20px;
+  border-radius: 40px;
+  display: flex;
 }
 
-.about .text p {
-  color: #F7F7F7;
+.about .logo img {
+  height: 300px;
+  margin: auto;
+  margin-bottom: 70px;
+}
+
+.about p {
+  color: var(--text-color);
+  margin-left: 40px;
+  margin-right: 40px;
 }
 
 .reviews {
-
+  padding: 10px;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
 }

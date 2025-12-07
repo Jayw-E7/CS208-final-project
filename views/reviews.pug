@@ -3,5 +3,21 @@ extends layout
 block content
   include includes/nav.pug
   div(class='reviews')
-    h1= title
-    p Welcome to #{title}
+    h1 Reviews
+    h2 Write a review
+    form(method='POST' action='/create')
+      label(for='review') review:
+      input(type='text', name='review', id='review', required)
+      button(type='submit') Post
+    hr
+    ul
+    each val in reviews
+      li
+        span= val.review + ' - '
+        if val.completed > 0
+          span Completed
+        else
+          span Not Completed
+        form(method='POST' action='/delete')
+          input(type='hidden', name='id', value=val.id)
+          button(type='submit') Delete

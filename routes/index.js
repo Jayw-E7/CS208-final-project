@@ -4,12 +4,12 @@ var router = express.Router();
 /* GET landing page. */
 router.get('/', function(req, res, next){
   try {
-    req.db.query('SELECT * FROM todos;', (err, results) => {
+    req.db.query('SELECT * FROM reviews;', (err, results) => {
       if (err) {
-        console.error('Error fetching todos:', err);
-        return res.status(500).send('Error fetching todos');
+        console.error('Error fetching reviews:', err);
+        return res.status(500).send('Error fetching reviews');
       }
-      res.render('index', { title: 'Downtown Donuts', todos: results });
+      res.render('index', { title: 'Downtown Donuts', reviews: results });
     });
   } catch (error) {
     console.error('Error fetching items:', error);
@@ -20,12 +20,12 @@ router.get('/', function(req, res, next){
 /* GET menu. */
 router.get('/menu', function(req, res, next){
   try {
-    req.db.query('SELECT * FROM todos;', (err, results) => {
+    req.db.query('SELECT * FROM reviews;', (err, results) => {
       if (err) {
-        console.error('Error fetching todos:', err);
-        return res.status(500).send('Error fetching todos');
+        console.error('Error fetching reviews:', err);
+        return res.status(500).send('Error fetching reviews');
       }
-      res.render('menu', { title: 'Downtown Donuts', todos: results });
+      res.render('menu', { title: 'Downtown Donuts', reviews: results });
     });
   } catch (error) {
     console.error('Error fetching items:', error);
@@ -36,12 +36,12 @@ router.get('/menu', function(req, res, next){
 /* GET about page. */
 router.get('/about', function(req, res, next){
   try {
-    req.db.query('SELECT * FROM todos;', (err, results) => {
+    req.db.query('SELECT * FROM reviews;', (err, results) => {
       if (err) {
-        console.error('Error fetching todos:', err);
-        return res.status(500).send('Error fetching todos');
+        console.error('Error fetching reviews:', err);
+        return res.status(500).send('Error fetching reviews');
       }
-      res.render('about', { title: 'Downtown Donuts', todos: results });
+      res.render('about', { title: 'Downtown Donuts', reviews: results });
     });
   } catch (error) {
     console.error('Error fetching items:', error);
@@ -52,12 +52,12 @@ router.get('/about', function(req, res, next){
 /* GET reviews page. */
 router.get('/reviews', function(req, res, next){
   try {
-    req.db.query('SELECT * FROM todos;', (err, results) => {
+    req.db.query('SELECT * FROM reviews;', (err, results) => {
       if (err) {
-        console.error('Error fetching todos:', err);
-        return res.status(500).send('Error fetching todos');
+        console.error('Error fetching reviews:', err);
+        return res.status(500).send('Error fetching reviews');
       }
-      res.render('reviews', { title: 'Downtown Donuts', todos: results });
+      res.render('reviews', { title: 'Downtown Donuts', reviews: results });
     });
   } catch (error) {
     console.error('Error fetching items:', error);
@@ -66,38 +66,38 @@ router.get('/reviews', function(req, res, next){
 });
 
 router.post('/create', function (req, res, next) {
-    const { task } = req.body;
+    const { review } = req.body;
     try {
-      req.db.query('INSERT INTO todos (task) VALUES (?);', [task], (err, results) => {
+      req.db.query('INSERT INTO reviews (review) VALUES (?);', [review], (err, results) => {
         if (err) {
-          console.error('Error adding todo:', err);
-          return res.status(500).send('Error adding todo');
+          console.error('Error adding Review:', err);
+          return res.status(500).send('Error adding Review');
         }
-        console.log('Todo added successfully:', results);
+        console.log('Review added successfully:', results);
         // Redirect to the home page after adding
-        res.redirect('/');
+        res.redirect('/reviews');
       });
     } catch (error) {
-      console.error('Error adding todo:', error);
-      res.status(500).send('Error adding todo');
+      console.error('Error adding Review:', error);
+      res.status(500).send('Error adding Review');
     }
 });
 
 router.post('/delete', function (req, res, next) {
     const { id } = req.body;
     try {
-      req.db.query('DELETE FROM todos WHERE id = ?;', [id], (err, results) => {
+      req.db.query('DELETE FROM reviews WHERE id = ?;', [id], (err, results) => {
         if (err) {
-          console.error('Error deleting todo:', err);
-          return res.status(500).send('Error deleting todo');
+          console.error('Error deleting Review:', err);
+          return res.status(500).send('Error deleting Review');
         }
-        console.log('Todo deleted successfully:', results);
+        console.log('Review deleted successfully:', results);
         // Redirect to the home page after deletion
-        res.redirect('/');
+        res.redirect('/reviews');
     });
     }catch (error) {
-        console.error('Error deleting todo:', error);
-        res.status(500).send('Error deleting todo:');
+        console.error('Error deleting Review:', error);
+        res.status(500).send('Error deleting Review:');
     }
 });
 
