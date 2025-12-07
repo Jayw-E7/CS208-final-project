@@ -6,8 +6,8 @@ router.get('/', function(req, res, next){
   try {
     req.db.query('SELECT * FROM reviews;', (err, results) => {
       if (err) {
-        console.error('Error fetching reviews:', err);
-        return res.status(500).send('Error fetching reviews');
+        console.error('Error fetching landing page', err);
+        return res.status(500).send('Error fetching landing page');
       }
       res.render('index', { title: 'Downtown Donuts', reviews: results });
     });
@@ -22,8 +22,8 @@ router.get('/menu', function(req, res, next){
   try {
     req.db.query('SELECT * FROM reviews;', (err, results) => {
       if (err) {
-        console.error('Error fetching reviews:', err);
-        return res.status(500).send('Error fetching reviews');
+        console.error('Error fetching menu page', err);
+        return res.status(500).send('Error fetching menu page');
       }
       res.render('menu', { title: 'Downtown Donuts', reviews: results });
     });
@@ -38,8 +38,8 @@ router.get('/about', function(req, res, next){
   try {
     req.db.query('SELECT * FROM reviews;', (err, results) => {
       if (err) {
-        console.error('Error fetching reviews:', err);
-        return res.status(500).send('Error fetching reviews');
+        console.error('Error fetching about page', err);
+        return res.status(500).send('Error fetching about page');
       }
       res.render('about', { title: 'Downtown Donuts', reviews: results });
     });
@@ -54,7 +54,7 @@ router.get('/reviews', function(req, res, next){
   try {
     req.db.query('SELECT * FROM reviews;', (err, results) => {
       if (err) {
-        console.error('Error fetching reviews:', err);
+        console.error('Error fetching reviews page', err);
         return res.status(500).send('Error fetching reviews');
       }
       res.render('reviews', { title: 'Downtown Donuts', reviews: results });
@@ -66,15 +66,15 @@ router.get('/reviews', function(req, res, next){
 });
 
 router.post('/create', function (req, res, next) {
-    const { review } = req.body;
+    const { review, review_body } = req.body;
     try {
-      req.db.query('INSERT INTO reviews (review) VALUES (?);', [review], (err, results) => {
+      req.db.query('INSERT INTO reviews (review, review_body) VALUES (?, ?);', [review, review_body], (err, results) => {
         if (err) {
           console.error('Error adding Review:', err);
           return res.status(500).send('Error adding Review');
         }
         console.log('Review added successfully:', results);
-        // Redirect to the home page after adding
+        // Redirect to the reviews page after adding
         res.redirect('/reviews');
       });
     } catch (error) {
@@ -92,7 +92,7 @@ router.post('/delete', function (req, res, next) {
           return res.status(500).send('Error deleting Review');
         }
         console.log('Review deleted successfully:', results);
-        // Redirect to the home page after deletion
+        // Redirect to the reviews after deletion
         res.redirect('/reviews');
     });
     }catch (error) {

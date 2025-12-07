@@ -5,8 +5,10 @@
   --text-color: black;
   --nav-color: #10291D;
   --nav-text-color: #F7F7F7;
+  --accent-color: #F7C64A;
 }
 
+/* Body */
 
 body {
   /* padding: 50px; */
@@ -23,17 +25,33 @@ body * :not(button):not(input) {
 }
 
 p {
-  font: 18px "Montserrat Regular";
+  font: 16px "Montserrat Regular";
 }
 
-/* Navigation Bar Style */
+h1 {
+  font: 60px "Montserrat Regular";
+}
+
+h2 {
+  font: 30px "Montserrat Regular";
+}
+
+h3 {
+  font: 24px "Montserrat Regular";
+}
+
+input {
+  font: 16px "Montserrat Regular";
+}
+
+/* Navigation Bar */
 
 .nav-container {
   display: flex;
   background-color: var(--nav-color);
   height: 95px;
   justify-content: left;
-  border-bottom: solid #F7C64A 10px;
+  border-bottom: solid var(--accent-color) 10px;
   /*float: top;*/
   margin: 0px;
 }
@@ -74,15 +92,32 @@ p {
 }
 
 
-/* Style for each page */
+/* Landing Page */
 
 .landing {
-  padding: 40px;
+  padding: 10px;
+  margin: 0px;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
 }
 
+.landing img {
+  width: auto;
+  max-height: 400px;
+  margin: auto;
+}
+
+/* Menu Page */
 .menu {
 
 }
+
+/* About Page */
 
 .about {
   padding: 10px;
@@ -92,9 +127,9 @@ p {
   margin-left: auto;
   margin-right: auto;
   min-width: 300px;
-  background-color: #F7F7F7;
-  border-right: double #F7C64A 3px;
-  border-left: double #F7C64A 3px;
+  background-color: var(--bg-color);
+  border-right: double var(--accent-color) 3px;
+  border-left: double var(--accent-color) 3px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -103,7 +138,11 @@ p {
 .about h1 {
   color: var(--text-color);
   display: inline;
-  font-size: 60px;
+}
+
+.about hr {
+  color: var(--text-color);
+  display: inline;
 }
 
 .about .logo {
@@ -128,9 +167,77 @@ p {
   margin-right: 40px;
 }
 
+/* Reviews page */
 .reviews {
   padding: 10px;
   width: 60%;
   margin-left: auto;
   margin-right: auto;
+}
+
+.text-entry {
+  display: flex;
+  flex-direction: column;
+}
+
+.text-entry > * :not(hr) {
+  margin: 3px;
+}
+
+.text-entry form {
+  display: flex;
+  flex-direction: column;
+  font: 16px "Montserrat Regular";
+}
+
+.text-entry input {
+  width: 220px;
+  height: 20px;
+}
+
+.text-entry textarea {
+}
+
+.text-entry button {
+  background-color: var(--accent-color);
+  width: 70px;
+  height: 35px;
+  color: #1e4b35;
+  font: 20px "Montserrat Regular";
+  border-radius: 5px;
+}
+
+.posted-reviews {
+  margin-top: 25px;
+}
+
+.posted-reviews h2 {
+  background-color: var(--nav-color);
+  display: inline;
+  color: var(--accent-color);
+  border-radius: 8px;
+  padding: 15px 55px 15px 55px;
+}
+
+.posted-reviews ul {
+  margin-top: 30px;
+}
+
+.posted-reviews li {
+  list-style-type: none;
+  padding: 20px;
+}
+
+.posted-reviews li span {
+  margin: 10px;
+  display: inline;
+  padding: 10px;
+}
+
+.posted-reviews button {
+  background-color: red;
+  color: #F7F7F7;
+  border-radius: 4px;
+  margin: 6px;
+  margin-left: 20px;
 }

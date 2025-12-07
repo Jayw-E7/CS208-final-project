@@ -5,5 +5,6 @@ USE cs208demo;
 CREATE TABLE IF NOT EXISTS reviews (
     id INT AUTO_INCREMENT PRIMARY KEY,
     review VARCHAR(255) NOT NULL,
+    review_body VARCHAR(2048) NOT NULL,
     completed BOOLEAN DEFAULT FALSE
 );

@@ -3,21 +3,28 @@ extends layout
 block content
   include includes/nav.pug
   div(class='reviews')
-    h1 Reviews
-    h2 Write a review
-    form(method='POST' action='/create')
-      label(for='review') review:
-      input(type='text', name='review', id='review', required)
-      button(type='submit') Post
+    div(class='text-entry')
+      h3 Leave us a review below!
+      form(method='POST' action='/create')
+        span
+          label(for='review') Subject:
+          input(type='text', name='review', id='review', required)
+        textarea(rows="6", cols="45", name='review_body', id='review_body', required)
+        button(type='submit') Submit
     hr
-    ul
-    each val in reviews
-      li
-        span= val.review + ' - '
-        if val.completed > 0
-          span Completed
-        else
-          span Not Completed
-        form(method='POST' action='/delete')
-          input(type='hidden', name='id', value=val.id)
-          button(type='submit') Delete
+    div(class='posted-reviews')
+      h2 Reviews:
+      ul
+      each val in reviews
+        li
+          span        
+            strong= val.review
+          br
+          span= val.review_body
+          //- if val.completed > 0
+          //-   span Completed
+          //- else
+          //-   span Not Completed
+          form(method='POST' action='/delete')
+            input(type='hidden', name='id', value=val.id)
+            button(type='submit') Delete
