@@ -26,6 +26,7 @@ body * :not(button):not(input) {
 
 p {
   font: 16px "Montserrat Regular";
+  line-height: 1.5;
 }
 
 h1 {
@@ -114,7 +115,35 @@ input {
 
 /* Menu Page */
 .menu {
+  width: 40%;
+  min-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  border: double var(--accent-color) 4px;
+  padding: 5px;
+  background-color: var(--nav-color);
+}
 
+.menu h1 {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  color: var(--accent-color);
+}
+
+.menu h2 {
+  color: var(--accent-color);
+  margin-left: 5px;
+}
+
+.menu p {
+  color: var(--nav-text-color);
+  margin-left: 4px;
+}
+
+.menu hr {
+  border-color: var(--accent-color);
 }
 
 /* About Page */
@@ -196,6 +225,7 @@ input {
 }
 
 .text-entry textarea {
+  width: 500px;
 }
 
 .text-entry button {
