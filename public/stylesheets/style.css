@@ -6,12 +6,12 @@
   --nav-color: #10291D;
   --nav-text-color: #F7F7F7;
   --accent-color: #F7C64A;
+  --detail-color: #7E7F9A;
 }
 
 /* Body */
 
 body {
-  /* padding: 50px; */
   font: 14px "Montserrat Regular";
   background: var(--bg-color);
   background-repeat: no-repeat;
@@ -53,17 +53,12 @@ input {
   height: 95px;
   justify-content: left;
   border-bottom: solid var(--accent-color) 10px;
-  /*float: top;*/
   margin: 0px;
 }
 
 .navbar {
-  /* max-width: 1200px; */
   background-color: var(--nav-color);
-  /* margin: 100px auto; */
   display:flex;
-  /* justify-content: left; */
-  /* border: solid #F7C64A 3px; */
   flex-direction: row;
   gap: 30px;
   margin-left: 30px;
@@ -76,20 +71,16 @@ input {
 }
 
 .navbar > a {
-  /* align-content: center; */
   align-self: center;
   display: inline;
   color: var(--nav-text-color);
-  /* border: solid #F7C64A 1px; */
-  font-family: 'Montserrat Regular'; 
+  font-family: 'Montserrat Regular';
   font-size: 20px;
-  /* margin: 5px 30px 5px 30px; */
-  /* text-align: center; */
   text-decoration: none;
 }
 
 .navbar a:hover {
-  color: #7e7f9a;
+  color: var(--detail-color);
 }
 
 
@@ -137,6 +128,16 @@ input {
   margin-left: 5px;
 }
 
+.menu h3 {
+  color: var(--nav-text-color);
+  margin-left: 5px;
+  margin-bottom: 15px;
+}
+
+.menu a {
+  color: var(--accent-color);
+}
+
 .menu p {
   color: var(--nav-text-color);
   margin-left: 4px;
@@ -144,6 +145,15 @@ input {
 
 .menu hr {
   border-color: var(--accent-color);
+}
+
+.menu .footer {
+  margin-left: 5px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin-top: 0px;
 }
 
 /* About Page */
@@ -192,8 +202,9 @@ input {
 
 .about p {
   color: var(--text-color);
-  margin-left: 40px;
-  margin-right: 40px;
+  margin-left: 20%;
+  margin-right: 20%;
+  text-align: center;
 }
 
 /* Reviews page */
@@ -228,7 +239,7 @@ input {
   width: 500px;
 }
 
-.text-entry button {
+.submit {
   background-color: var(--accent-color);
   width: 70px;
   height: 35px;
@@ -256,6 +267,7 @@ input {
 .posted-reviews li {
   list-style-type: none;
   padding: 20px;
+  text-align: left;
 }
 
 .posted-reviews li span {
@@ -264,10 +276,28 @@ input {
   padding: 10px;
 }
 
-.posted-reviews button {
+.posted-reviews li .date {
+  color: var(--detail-color);
+  font-family: 'Montserrat Regular';
+  font-size: 12px;
+}
+
+.posted-reviews .button {
+  display: flex;
+  flex-direction: row;
+}
+
+.delete {
   background-color: red;
-  color: #F7F7F7;
+  color: var(--nav-text-color);
   border-radius: 4px;
   margin: 6px;
   margin-left: 20px;
+}
+
+.edit {
+  background-color: var(--detail-color);
+  color: var(--nav-text-color);
+  border-radius: 4px;
+  margin: 6px;
 }

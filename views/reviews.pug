@@ -10,21 +10,32 @@ block content
           label(for='review') Subject:
           input(type='text', name='review', id='review', required)
         textarea(rows="6", cols="45", name='review_body', id='review_body', required)
-        button(type='submit') Submit
+        button(type='submit', class='submit') Submit
     hr
     div(class='posted-reviews')
       h2 Reviews:
       ul
       each val in reviews
         li
-          span        
+          span
             strong= val.review
+            span(class="date")= val.date
           br
-          span= val.review_body
-          //- if val.completed > 0
-          //-   span Completed
-          //- else
-          //-   span Not Completed
-          form(method='POST' action='/delete')
-            input(type='hidden', name='id', value=val.id)
-            button(type='submit') Delete
+          if val.id == editId
+            div(class='text-entry')
+              form(method='POST' action='/update')
+                span
+                  input(type='hidden', name='id', value=val.id)
+                  label(for='review') Subject:
+                  input(type='text', name='review', id='review', required, value=val.review)
+                textarea(rows="6", cols="45", name='review_body', id='review_body', required)= val.review_body
+                button(type='submit', class='submit') Save
+          else
+            span= val.review_body
+          div(class="button")
+            form(method='POST' action='/delete')
+              input(type='hidden', name='id', value=val.id)
+              button(type='submit', class='delete') Delete
+            form(method='POST' action='/edit')
+              input(type='hidden', name='id', value=val.id)
+              button(type='submit', class='edit') Edit
